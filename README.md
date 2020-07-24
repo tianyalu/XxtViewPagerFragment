@@ -10,17 +10,17 @@ ViewPager中的适配器原理
 
 `ViewPager Fragment` 适配器：  
 
-![image](https://github.com/tianyalu/ViewPagerFragment/raw/master/viewpager_fragment_adapter.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/viewpager_fragment_adapter.png)  
 
 `ViewPager Fragment` 生命周期：  
 
-![image](https://github.com/tianyalu/ViewPagerFragment/raw/master/viewpager_fragment_lifecycle.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/viewpager_fragment_lifecycle.png)  
 
 
 
 生命周期相关：  
 
-![image](https://github.com/tianyalu/ViewPagerFragment/raw/master/viewpager_fragment_cache.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/viewpager_fragment_cache.png)  
 
 事务：提交事务，触发器执行
 
@@ -44,7 +44,7 @@ ViewPager中的适配器原理
 
 特殊情况:  
 
-![image](https://github.com/tianyalu/ViewPagerFragment/raw/master/viewpager_fragment_special_condition.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/viewpager_fragment_special_condition.png)  
 
 onPause()
 
