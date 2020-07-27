@@ -14,13 +14,13 @@ public abstract class LazyFragment extends Fragment {
     private static final String TAG = LazyFragment.class.getSimpleName();
     FragmentDelegator fragmentDelegator;
     private View rootView;
-    private boolean isViewCreated = false;
-    private boolean isCurrentVisibleState = false;
+    private boolean isViewCreated = false;  //View是否创建了
+    private boolean isCurrentVisibleState = false;  //当前是否可见
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: ");
+        Log.d(TAG, "onCreateView: " + getUserVisibleHint());
         if(rootView == null) {
             rootView = inflater.inflate(getLayoutRes(), container, false);
         }
@@ -56,7 +56,7 @@ public abstract class LazyFragment extends Fragment {
         if(visibleState) {
             onFragmentLoad();
         }else {
-            onFragmentLoad();
+            onFragmentLoadStop();
         }
     }
 
@@ -93,5 +93,9 @@ public abstract class LazyFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: ");
+    }
+
+    protected void setFragmentDelegator(FragmentDelegator fragmentDelegator){
+        this.fragmentDelegator = fragmentDelegator;
     }
 }

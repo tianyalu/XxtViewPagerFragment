@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,18 @@ public class MyFragment extends LazyFragment {
     TextView textView;
     int tabIndex;
     private CountDownTimer countDownTimer;
-    private Handler handler = new Handler();
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 10:
+                    imageView.setVisibility(View.VISIBLE);
+                    textView.setVisibility(View.GONE);
+                    break;
+            }
+        }
+    };
 
     public static MyFragment newInstance(int position) {
         Bundle bundle = new Bundle();
@@ -33,6 +45,7 @@ public class MyFragment extends LazyFragment {
 
         return fragment;
     }
+
 
 
     @Override
@@ -66,7 +79,8 @@ public class MyFragment extends LazyFragment {
         }
         Log.d(TAG, tabIndex + " fragment 暂停一切操作 pause: ");
         //对UI操作的代表
-        textView.setText("av");
+        textView.setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.GONE);
     }
 
     @Override
@@ -91,7 +105,7 @@ public class MyFragment extends LazyFragment {
 
             @Override
             public void onFinish() {
-                handler.sendEmpthMessage(0);
+                handler.sendEmptyMessage(10);
             }
         };
         countDownTimer.start();
