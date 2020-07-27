@@ -136,6 +136,13 @@ public abstract class LazyFragment extends Fragment {
             dispatchUserVisibleHint(false);
         }
     }
+  
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        isViewCreated = false;
+        isCurrentVisibleState = false;
+    }
 }
 ```
 
