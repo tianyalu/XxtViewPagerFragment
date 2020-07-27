@@ -90,6 +90,14 @@ public abstract class LazyFragment extends Fragment {
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.d(TAG, "onDestroyView: ");
+        isViewCreated = false;
+        isCurrentVisibleState = false;
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy: ");
