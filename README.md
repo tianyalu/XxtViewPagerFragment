@@ -21,7 +21,7 @@ viewPager.setOffscreenPageLimit(1);
 
 基于`ViewPager`的缓存机制，当其承载的`Fragment`比较复杂，请求的数据量很大时，由于初始时会一次加载至少3个页面的数据，会造成卡顿和性能的浪费。所以需要对此进行优化。  
 
-![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/show/viewpager_cache.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/show/viewpager_cache.png)   
 
 #### 1.1.1 缓存与懒加载
 
@@ -29,7 +29,7 @@ viewPager.setOffscreenPageLimit(1);
 
 懒加载：避免预加载，需要看到的时候才去加载页面的数据并显示
 
-> 不可见 --> 可见的一瞬间 ： 加载
+> 不可见 --> 可见的一瞬间 ： 加载  
 > 可见 --> 不可见的一瞬间：停止加载
 
 ### 1.2 `ViewPager`适配器
@@ -44,7 +44,7 @@ viewPager.setOffscreenPageLimit(1);
 
 #### 1.3.1 `ViewPager Fragment` 生命周期  
 
-![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/viewpager_fragment_lifecycle.png)  
+![image](https://github.com/tianyalu/XxtViewPagerFragment/raw/master/show/viewpager_fragment_lifecycle.png)  
 
 #### 1.3.2 生命周期相关  
 
